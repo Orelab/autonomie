@@ -99,7 +99,7 @@ class AdminCompetenceRequirement(req_admin_class):
     def before(self, form):
         if CompetenceScale.query().count() == 0:
             self.session.flash(
-                u"Les barêmes doivent être configurer avant \
+                u"Les barêmes doivent être configurés avant \
 la grille de compétences."
             )
             raise HTTPFound(self.request.route_path("admin_competence_scale"))
